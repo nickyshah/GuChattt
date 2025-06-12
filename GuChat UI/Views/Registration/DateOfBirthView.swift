@@ -223,9 +223,10 @@ struct DateOfBirthView: View {
                                 isDatePickerShowing = true
                             }) {
                                 Image(systemName: "calendar")
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(Color.gray.opacity(0.4))
                                     .font(.title2)
-                                    .padding(.trailing, 8)
+                                    .scaleEffect(2)
+                                    .padding(10)
                             }
                         }
 

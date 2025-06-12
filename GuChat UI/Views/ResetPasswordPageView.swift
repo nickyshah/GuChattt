@@ -76,12 +76,12 @@ struct ResetPasswordPageView: View {
                 .padding(.horizontal) // Apply horizontal padding to this section
 
                 // MARK: - Confirm Password Input Field
-                VStack(alignment: .leading, spacing: 10) { // Separate VStack for its label and field
+                VStack(alignment: .leading, spacing: 10) {
                     Text("Confirm Password")
                         .fontWeight(.bold)
                         .font(.system(size: 22))
-                        .foregroundColor(.black) // Main labels are black
-                        .padding(.top, 20) // Space between password field and this label
+                        .foregroundColor(.black)
+                        .padding(.top, 20)
 
                     HStack {
                         if showingConfirmPassword {
@@ -124,7 +124,7 @@ struct ResetPasswordPageView: View {
                         .padding(.bottom, 5)
 
                     // Using a custom BulletPoint view for consistent styling
-                    BulletPoint(text: "total of 8 Characters")
+                    BulletPoint(text: "Total of 8 Characters")
                     BulletPoint(text: "One Lower case letter (a-z)")
                     BulletPoint(text: "One Upper case letter (A-Z)")
                     BulletPoint(text: "One Number (0-9)")
@@ -136,9 +136,7 @@ struct ResetPasswordPageView: View {
 
                 // MARK: - Reset Button
                 Button(action: {
-                    print("Reset button tapped")
-                    print("New Password: \(password)")
-                    print("Confirm Password: \(confirmPassword)")
+                    
                     // Add your password reset logic here
                     // You'd typically validate passwords, check if they match,
                     // and then call an API to reset.
@@ -178,18 +176,6 @@ struct BulletPoint: View {
         }
     }
 }
-
-//// MARK: - Preview
-//struct ResetPasswordPageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ResetPasswordPageView()
-//            .previewDisplayName("Reset Password Page Light")
-//
-//        ResetPasswordPageView()
-//            .preferredColorScheme(.dark)
-//            .previewDisplayName("Reset Password Page Dark")
-//    }
-//}
 
 #Preview{
     ResetPasswordPageView()

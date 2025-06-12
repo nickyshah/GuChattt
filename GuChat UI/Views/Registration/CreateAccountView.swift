@@ -75,7 +75,7 @@ struct CreateAccountView: View {
                         )
                     }
 
-                    // Mobile Number Input
+                    // Mobile Number
                     ZStack(alignment: .leading) {
                         if mobileNumber.isEmpty {
                             Text("Enter mobile number")
@@ -108,9 +108,6 @@ struct CreateAccountView: View {
                         .font(.title3)
                 }
 
-                // Refined Code Starts Here
-                // Use an inner HStack with spacing: 0 to ensure text flows inline
-                // and apply lineLimit/minimumScaleFactor to this text block.
                 HStack(spacing: 0) {
                     Text("By clicking you agree to ")
                         .font(.footnote)
