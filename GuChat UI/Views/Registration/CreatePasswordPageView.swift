@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ResetPasswordPageView: View {
+struct CreatePasswordPageView: View {
     @StateObject private var viewModel = PasswordViewModel()
     @State private var showingPassword = false
     @State private var showingConfirmPassword = false
@@ -8,9 +8,8 @@ struct ResetPasswordPageView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 0) {
-                // Top Nav
                 HStack {
-                    NavigationLink(destination: Text("LoginPageView Placeholder")) {
+                    NavigationLink(destination: Text("Back Placeholder")) {
                         Image(systemName: "arrow.backward")
                             .font(.title2)
                             .foregroundColor(.black)
@@ -20,15 +19,13 @@ struct ResetPasswordPageView: View {
                 .padding(.horizontal)
                 .padding(.top, 20)
 
-                // Title
-                Text("Reset Password")
+                Text("Create Password")
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                     .padding(.horizontal)
                     .padding(.top, 20)
                     .padding(.bottom, 30)
 
-                // Inputs
                 PasswordInputSection(
                     viewModel: viewModel,
                     showingPassword: $showingPassword,
@@ -36,23 +33,21 @@ struct ResetPasswordPageView: View {
                 )
                 .padding(.horizontal)
 
-                // Requirements
                 PasswordRequirementsView(viewModel: viewModel)
                     .padding(.horizontal)
                     .padding(.top, 30)
 
                 Spacer()
 
-                // Reset Button
                 Button(action: {
-                    print("Reset password: \(viewModel.password)")
+                    print("Create password: \(viewModel.password)")
                 }) {
-                    Text("Reset")
+                    Text("Create")
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.green)
                         .cornerRadius(10)
                 }
                 .padding(.horizontal)
@@ -62,7 +57,6 @@ struct ResetPasswordPageView: View {
         }
     }
 }
-
 #Preview {
-    ResetPasswordPageView()
+    CreatePasswordPageView()
 }
